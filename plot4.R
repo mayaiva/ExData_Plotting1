@@ -11,9 +11,9 @@ datetime <- strptime(paste(data_subset$Date, the_data_subset$Time, sep=" "), "%d
 Global_active_power <- as.numeric(data_subset$Global_active_power)
 Global_reactive_power <- as.numeric(data_subset$Global_reactive_power)
  
-the_subMetering1 <- as.numeric(data_subset$Sub_metering_1)
-the_subMetering2 <- as.numeric(data_subset$Sub_metering_2)
-the_subMetering3 <- as.numeric(data_subset$Sub_metering_3)
+subMetering1 <- as.numeric(data_subset$Sub_metering_1)
+subMetering2 <- as.numeric(data_subset$Sub_metering_2)
+subMetering3 <- as.numeric(data_subset$Sub_metering_3)
  
 png("plot4.png", width=480, height=480)
  
@@ -21,16 +21,15 @@ par(mfrow = c(2, 2))
 
 ##Create 1st plot
 plot(datetime, Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)", cex=0.2)
-#end upper left plot
  
 ##Create 2nd plot
 voltage <- as.numeric(data_subset$Voltage)
 plot(datetime, voltage, type="l", xlab="datetime", ylab="Voltage")
 
 ##Create 3rd plot
-plot(datetime, the_subMetering1, type="l", ylab="Energy Submetering", xlab="")
-lines(datetime, the_subMetering2, type="l", col="red")
-lines(datetime, the_subMetering3, type="l", col="blue")
+plot(datetime, subMetering1, type="l", ylab="Energy Submetering", xlab="")
+lines(datetime, subMetering2, type="l", col="red")
+lines(datetime, subMetering3, type="l", col="blue")
 legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"))
 
 ##Create 4th plot
