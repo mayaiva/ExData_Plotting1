@@ -1,4 +1,4 @@
- ##read data
+##Read data
 data_file <- "./household_power_consumption.txt"
 data <- read.table(data_file, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
 
