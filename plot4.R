@@ -6,7 +6,7 @@ data <- read.table(data_file, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=
 data_subset <- data[data$Date %in% c("1/2/2007", "2/2/2007"),]
 
 ##Convert the date and time variables
-datetime <- strptime(paste(data_subset$Date, the_data_subset$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
+datetime <- strptime(paste(data_subset$Date, data_subset$Time, sep=" "), "%d/%m/%Y %H:%M:%S") 
 
 Global_active_power <- as.numeric(data_subset$Global_active_power)
 Global_reactive_power <- as.numeric(data_subset$Global_reactive_power)
