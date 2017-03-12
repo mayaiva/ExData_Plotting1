@@ -5,10 +5,10 @@ data <- read.table(data_file, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=
 ##Select 1st and 2nd of February 2007
 data_subset <- data[data$Date %in% c("1/2/2007", "2/2/2007"),]
 
-## Convert and combine the date and time information 
+##Convert and combine the date and time information 
 datetime <- strptime(paste(data_subset$Date, data_subset$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 
-#define and set required data as numeric
+#Define and set required data as numeric
 Global_active_power <- as.numeric(data_subset$Global_active_power)
 subMetering1 <- as.numeric(data_subset$Sub_metering_1)
 subMetering2 <- as.numeric(data_subset$Sub_metering_2)
