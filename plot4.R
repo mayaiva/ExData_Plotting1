@@ -1,6 +1,7 @@
 ##Read data
 data_file <- "./household_power_consumption.txt"
 data <- read.table(data_file, header=TRUE, sep=";", stringsAsFactors=FALSE, dec=".")
+##Select February 1st, 2007 and February 2nd, 2007
 data_subset <- data[data$Date %in% c("1/2/2007", "2/2/2007"),]
 
 ## Convert  the date and time information 
